@@ -5,41 +5,41 @@ import Logo from '../../../assets/image/bgr.jpeg';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
-import {useNavigation} from '@react-navigation/native'
 
-const ConfirmEmailScreen = () => {
-  const [code, setCode] = useState("");
+
+const ForgotPasswordScreen = () => {
+  const [username, setUsername] = useState("");
   
-  const navigate = useNavigation();
   
-  const onConfirmPressed =() =>{
+  const onSendPressed =() =>{
     console.warn(" onConfirmPressed ");
   
   }
   const onSignInPressed =() =>{
-    navigate.navigate('SignIn')
+    console.warn("onSignInPressed");
   }
   const onResendPressed =() =>{
-    console.warn("Đã gửi lại mã");
+    console.warn("onResendPressed");
+  }
+  const onPrivacyPolicyPressed =() =>{
+    console.warn("onPrivacyPolicyPressed");
   }
 
   return (
   <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.root}>
-      <Text style={styles.title}>Xác thực Email </Text>
+      <Text style={styles.title}>Reset your password</Text>
 
     <CustomInput 
-      placeholder="Mã xác thực" value={code} setValue={setCode}/>
+      placeholder="Enter comfirmation code" 
+      value={username} 
+      setValue={setUsername}
+      />
     
-    <CustomButton text="Xác nhận" onPress={onConfirmPressed}  />
-  
+    <CustomButton text="Send" onPress={onSendPressed}  />
+ 
     <CustomButton
-      text="Gửi lại mã" 
-      onPress={onResendPressed} 
-      type="SECONDARY"
-    />
-    <CustomButton
-      text="Quay lại đăng nhập" 
+      text="Back to Sign in" 
       onPress={onSignInPressed} 
       type="TERTIARY"
     />
@@ -49,8 +49,6 @@ const ConfirmEmailScreen = () => {
 };
 const styles = StyleSheet.create({
   root:{
-    flex: 1,
-    // backgroundColor: '#AFEEEE',
     alignItems: 'center',
     padding: 20,
   },
@@ -71,4 +69,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default ConfirmEmailScreen
+export default ForgotPasswordScreen

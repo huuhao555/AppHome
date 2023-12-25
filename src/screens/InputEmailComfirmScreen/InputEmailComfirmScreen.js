@@ -7,37 +7,29 @@ import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
 import {useNavigation} from '@react-navigation/native'
 
-const ConfirmEmailScreen = () => {
-  const [code, setCode] = useState("");
+const InputEmailComfirmScreen = () => {
+  const [email, setEmail] = useState("");
   
   const navigate = useNavigation();
   
   const onConfirmPressed =() =>{
-    console.warn(" onConfirmPressed ");
+    navigate.navigate('ConfirmEmail')
   
   }
   const onSignInPressed =() =>{
     navigate.navigate('SignIn')
   }
-  const onResendPressed =() =>{
-    console.warn("Đã gửi lại mã");
-  }
 
   return (
   <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.root}>
-      <Text style={styles.title}>Xác thực Email </Text>
+      <Text style={styles.title}>Tìm tài khoản của bạn </Text>
 
     <CustomInput 
-      placeholder="Mã xác thực" value={code} setValue={setCode}/>
+      placeholder="Nhập email tài khoản" value={email} setValue={setEmail}/>
     
-    <CustomButton text="Xác nhận" onPress={onConfirmPressed}  />
+    <CustomButton text="Tìm tải khoản" onPress={onConfirmPressed}  />
   
-    <CustomButton
-      text="Gửi lại mã" 
-      onPress={onResendPressed} 
-      type="SECONDARY"
-    />
     <CustomButton
       text="Quay lại đăng nhập" 
       onPress={onSignInPressed} 
@@ -71,4 +63,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default ConfirmEmailScreen
+export default InputEmailComfirmScreen

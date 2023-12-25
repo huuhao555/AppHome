@@ -1,18 +1,15 @@
 import React from 'react'
 import { SafeAreaView,StyleSheet,View, Text } from 'react-native'
-import SignInScreen from './src/screens/SignInScreen'
-import SignUpScreen from './src/screens/SignUpScreen'
-import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen/ConfirmEmailScreen'
+
+import Navigation from './src/navigation'
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      
-      <ConfirmEmailScreen/>
+      <Navigation/>
     </SafeAreaView>
   )
 }
-
 const styles = StyleSheet.create({
   root:{
     flex: 1,

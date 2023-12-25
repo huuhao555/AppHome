@@ -5,6 +5,7 @@ import Logo from '../../../assets/image/bgr.jpeg';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
+import {useNavigation} from '@react-navigation/native'
 
 
 const SignUpScreen = () => {
@@ -13,19 +14,20 @@ const SignUpScreen = () => {
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
   
+  const navigation = useNavigation();
   
   const onRegisterPressed =() =>{
-    console.warn("Please fill in the required information! ");
+    navigation.navigate('ConfirmEmail')
   
   }
   const onSignInPressed =() =>{
-    console.warn("onSignInPressed");
+    navigation.navigate('SignIn')
   }
   const onTermsofUsePressed =() =>{
-    console.warn("onTermsofUsePressed");
+    console.warn("Điều khoản sử dụng");
   }
   const onPrivacyPolicyPressed =() =>{
-    console.warn("onPrivacyPolicyPressed");
+    console.warn("Chính sách bảo mật");
   }
 
   return (
@@ -34,7 +36,7 @@ const SignUpScreen = () => {
       <Text style={styles.title}>Create an account</Text>
 
     <CustomInput 
-      placeholder="Username" 
+      placeholder="Tên đăng nhập" 
       value={username} 
       setValue={setUsername}
     />
@@ -44,25 +46,25 @@ const SignUpScreen = () => {
       setValue={setEmail}
     />
     <CustomInput 
-      placeholder="Password" 
+      placeholder="Mật khẩu" 
       value={password} 
       setValue={setPassword}
       secureTextEntry={true}
     />
     <CustomInput 
-      placeholder="Repeat Password" 
+      placeholder="Nhập lại mật khẩu" 
       value={passwordRepeat} 
       setValue={setPasswordRepeat}
       secureTextEntry={true}
     />
-    <CustomButton text="Register" onPress={onRegisterPressed}  />
-    <Text style={styles.text}>By registering, you comfirm that you accect our 
-      <Text style={styles.link} onPress={onTermsofUsePressed}> Terms of Use </Text>and
-      <Text style={styles.link} onPress={onPrivacyPolicyPressed}> Privacy Policy</Text> 
+    <CustomButton text="Đăng ký" onPress={onRegisterPressed}  />
+    <Text style={styles.text}>Bạn hãy xác nhận rằng bạn chấp nhận
+      <Text style={styles.link} onPress={onTermsofUsePressed}> Điều khoản sử dụng </Text>và
+      <Text style={styles.link} onPress={onPrivacyPolicyPressed}> Chính sách bảo mật</Text> 
     </Text>
     <SocialSignInButtons/>
     <CustomButton
-      text="Have a accout. Sign in" 
+      text="Bạn đã có tài khoản? Đăng nhập" 
       onPress={onSignInPressed} 
       type="TERTIARY"
     />

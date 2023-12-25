@@ -4,30 +4,30 @@ import CustomButton from '../CustomButton'
 
 const SocialSignInButtons = () => {
     const onSignInFacebook =() =>{
-        console.warn("onSignInFacebook");
+        console.warn("Dữ liệu Facebook");
       }
       const onSignInGoogle =() =>{
-        console.warn("onSignInGoogle");
+        console.warn("Dữ liệu Google");
       }
       const onSignInApple =() =>{
-        console.warn("onSignInApple");
+        console.warn("Dữ liệu Apple");
       }
   return (
     <>
       <CustomButton 
-      text="Sign In with Facebook" 
+      text="Đăng nhập bằng Facebook" 
       onPress={onSignInFacebook}
       bgColor="#fff"
       fgColor="#1E90FF"
       />
     <CustomButton 
-      text="Sign In with Google" 
+      text="Đăng nhập bằng Google" 
       onPress={onSignInGoogle}  
       bgColor="#fff"
       fgColor="#DD4D44"
       />
     <CustomButton 
-      text="Sign In with Apple" 
+      text="Đăng nhập bằng Apple" 
       onPress={onSignInApple}  
       bgColor="#fff"
       fgColor="#363636"
